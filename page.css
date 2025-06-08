@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg , #2B0504, #BC5F04,  #874000);
+}
+
+#header{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15px; /* reduced */
+    padding: 10px;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px; /* reduced */
+    font-weight: bolder;
+    margin-bottom: 0;
+    text-shadow: 4px 4px 2px #ffffff;
+}
+
+h4{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px; /* reduced */
+    margin-top: 15px; /* reduced */
+    text-shadow: 2px 2px 2px #ffffff;
+}
+
+#clock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 800px; /* reduced from 800px */
+    width: 80%; /* reduced from 100% */
+    gap: 15px; /* reduced */
+    margin-bottom: 0;
+    position: relative; /* keep for #time-text */
+}
+
+#progress-ring-circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 1130;
+  stroke-dashoffset: 1130;
+  stroke: rgba(255, 255, 255, 0.943);
+  fill: transparent;
+}
+
+#time-text {
+  position: absolute;
+  font-family: 'Roboto';
+  font-size: 50px; /* reduced from 80px */
+  transform: translate(1%, -160%);
+  color: black;
+  transition : text-shadow 0.3s ease, transform 1s ease-out-in;
+}
+
+#time-text:hover{
+   text-shadow: 1px 1px 3px white;
+   transform: translate(1%, -160%) scale(1.1);
+}
+
+#options{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 10px;
+    gap: 100px; /* reduced from 200px */
+    justify-content: center;
+    flex-wrap: wrap; /* to avoid overflow */
+}
+
+#strt, #reset, #pause, #toggle-btn, #music-btn{
+    height: 60px;  /* reduced from 100px */
+    width: 140px;  /* reduced from 200px */
+    font-family: 'roboto';
+    font-size: 25px; /* reduced from 40px */
+    border-radius: 30px;
+   
+    border-color: transparent;
+    background-color: transparent;
+   
+   
+}
+
+#strt:enabled:hover, 
+#reset:enabled:hover,
+#pause:enabled:hover{
+    transform: scale(0.95);
+     cursor: pointer;
+    border-color: black;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+#choice{
+    display: flex;
+    flex-direction: row;
+    gap: 40%; /* slightly reduced */
+    margin-top: 40px; /* reduced */
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 0; /* removed big margin */
+}
+
+#_25mins, #_60mins{
+    font-size: 30px; /* reduced */
+    width: 300px; /* reduced from 500px */
+    height: 70px; /* reduced from 100px */
+    margin-left: 50px;
+    margin-right: 50px;
+    cursor: pointer;
+    border-radius: 30px;
+    background-color: transparent;
+   
+   
+}
+
+#_25mins:hover, 
+#_60mins:hover{
+    transform: scale(0.95);
+    border-color: black;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    
+}
+#intro{
+    height: fit-content;
+    width: fit-content;
+    margin-top: 20px; /* reduced */
+}
+
+p{
+    font-family: 'roboto';
+    font-size: 50px; /* reduced */
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px white;
+}
+
+#quote {
+  width: 700px; /* reduced from 1000px */
+  font-size: 20px; /* reduced */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  height: 80px; /* reduced */
+  margin-top: 30px; /* reduced */
+  padding-top: 15px; /* reduced */
+}
+
+#toggle-btn, #music-btn{
+    font-size: 15px; /* reduced */
+    width: 150px; /* reduced */
+    height: 50px; /* reduced */
+    border-style: solid;
+    border-color: black;
+    
+}
+
+#lower-hlf {
+    display: flex;
+    flex-direction: row;  /* stack vertically */
+    margin-top: 50px;        /* some space above */
+    align-items: center;     /* center buttons horizontally */
+    width: 100%;
+    margin-left:60%;    
+    gap :20%
+}
+
+
+
+
+button:disabled {
+  animation: none;
+  background-color: rgba(195, 190, 190, 0.798);
+  color: grey; 
+  cursor: not-allowed;
+}
+
+
+
+
+button:enabled{
+    color: black;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: black;
+}
+button:enabled:hover{
+    
+    transition: border-style 1s ease-in , border-color 1s ease-in ;
+}
+
+/* Dark mode styles */
+body.dark {
+  background: linear-gradient(120deg, #1F5673, #759FBC, #90C3C8);
+  color: #eee;
+}
+
+body.dark #time-text {
+  color: #463730;
+  text-shadow: 1px 1px 3px rgb(255, 255, 255);
+}
+
+body.dark #quote {
+  color: #463730;
+}
+
+body.dark button:enabled {
+  color: #463730;
+  background-color: #ddd;
+  border-color: #444;
+}
+
+body.dark button:enabled:hover {
+  border-color: #463730;
+}
+
+body.dark #header h1,
+body.dark #header h4 {
+    color: #463730;
+  text-shadow: 2px 2px 3px white;
+}
+
+body.dark #progress-ring-circle {
+  stroke: #463730;
+}
+
+body.dark p{
+    color: #463730; 
+}

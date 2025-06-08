@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+    <link rel="stylesheet" href="page.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <div id="header">
+        <h1>POMODORO TIMER</h1>
+        <h4>Study Along</h4>
+    </div>
+
+    <div id="clock">
+        
+
+        <svg id="progress-ring" width="400" height="400">
+            
+            <circle
+                id="progress-ring-circle"
+                stroke="transparent"
+                stroke-width="8"
+                fill="transparent"
+                r="180"
+                cx="180"
+                cy="200"
+            />
+        </svg>
+        <div id="time-text">--</div>
+
+        <p id="intro">Choose</p>
+        <div id="choice">
+            <button id="_25mins">25mins</button>
+            <button id="_60mins">60mins</button>
+        </div>
+    </div>
+
+    <div id="options">
+        <button id="reset">Reset</button>
+        <button id="strt">Start</button>
+        <button id="pause">Pause</button>
+    </div>
+
+    <div id="quote"></div>
+
+    <div id="lower-hlf">
+        <button id="music-btn">Music Change</button>
+        <button id="toggle-btn">Mode Switch</button>
+    </div>
+
+    <audio id="audio-player" controls>
+        <source id="audio-source" type="audio/mpeg" />
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="page.js"></script>
+</body>
+</html>
